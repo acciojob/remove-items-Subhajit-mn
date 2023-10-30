@@ -16,10 +16,21 @@
 				<option>White</option> 
 				<option>Black</option> 
 			</select> 
-			<input type="button" value="Select and Remove"> 
+			<input onclick="solve()" type="button" value="Select and Remove"> 
 		</form>
 
 		<script type="text/javascript" src="./script.js">
+			function solve(){
+				const select = document.getElementById("colorSelect");
+				let selectedValue = select.value;
+				let options = select.children;
+				for(let i=0; i<options.length; i++){
+					if(options[i].value === selectedValue){
+						options[i].remove();
+						break;
+					}
+				}
+			}
 		</script>
 
 	</body>
